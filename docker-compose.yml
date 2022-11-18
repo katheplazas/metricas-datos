@@ -1,0 +1,14 @@
+version: '3'
+services:
+  metricas-datos:
+    image: metricas-datos:v1
+    build: .
+    container_name: metricas-datos
+    restart: unless-stopped
+    ports:
+      - "8053:8053"
+    networks:
+      - deteccion-anomalias
+networks:
+  deteccion-anomalias:
+    external: true
